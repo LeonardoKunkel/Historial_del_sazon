@@ -80,6 +80,12 @@ exports.postLogin = async (req, res) => {
     }
 
     //Gestión de session
+    req.session.currentUser = {
+        _id: foundUser._id,
+        username: foundUser.username,
+        email: foundUser.email,
+        msg: 'Este es tu ticket'
+    }
 
     return res.redirect('/');
 }
