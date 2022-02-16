@@ -11,7 +11,10 @@ const dishSchema = Schema({
     img: {
         type: String
     },
-    created: {}
+    // user: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'User'
+    // }
 }, {
     timestamps: true
 });

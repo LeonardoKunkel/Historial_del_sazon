@@ -1,0 +1,19 @@
+<h1>Detalles del establecimiento</h1>
+<hr>
+
+{{#with place}}
+    <h1>{{ name }}</h1>
+    <h2>{{ location }}</h2>
+    <p>{{ description }}</p>
+    <img src="{{image}}" alt="imagen" />
+
+    <form action="/places/edit/{{_id}}" method="get">
+        <button>Editar</button>
+    </form>
+    <form action="/places/{{_id}}/delete" method="post">
+        <button>Eliminar</button>
+    </form>
+
+    <a href="/places/dishes/{{_id}}">Agrega un platillo</a>
+
+{{/with}}

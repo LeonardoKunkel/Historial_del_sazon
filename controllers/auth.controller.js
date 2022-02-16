@@ -87,5 +87,7 @@ exports.postLogin = async (req, res) => {
         msg: 'Este es tu ticket'
     }
 
-    return res.redirect('/');
+    return res.redirect('/places');
 }
+
+

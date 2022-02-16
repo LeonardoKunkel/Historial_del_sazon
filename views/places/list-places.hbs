@@ -1,2 +1,19 @@
 <h1>Lista de Establecimientos</h1>
 <hr>
+
+{{#each places}}
+    <h2>{{ name }}</h2>
+    <h3>{{ location }}</h3>
+    <br>
+    <p>{{ description }}</p>
+    <img src="{{ image }}" />
+
+    <a href="/places/{{_id}}">Agregar platillos</a>
+{{/each}}
+
+<br>
+
+<br>
+<a href="/places/create">
+    <button>Agregar Establecimiento</button>
+</a>

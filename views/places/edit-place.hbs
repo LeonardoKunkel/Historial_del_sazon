@@ -1,0 +1,28 @@
+<h1>Editar Establecimiento</h1>
+<hr>
+
+{{#with placeFound}}
+    <form action="/places/edit/{{_id}}" method="post">
+        <label>
+            Nombre
+            <input type="text" name="name" value="{{ name }}" />
+        </label>
+        <br />
+        <label>
+            Ciudad
+            <input type="text" name="location" value="{{ location }}" />
+        </label>
+        <br />
+        <label>
+            Descripción
+            <input type="text" name="description" value="{{ description }}" />
+        </label>
+        <br />
+        <label>
+            Imagen
+            <input type="text" name="image" value="{{ image }}" />
+        </label>
+        <br />
+        <button type="submit">Guardar cambios</button>
+    </form>
+{{/with}}
