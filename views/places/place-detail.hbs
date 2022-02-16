@@ -16,4 +16,10 @@
 
     <a href="/places/dishes/{{_id}}">Agrega un platillo</a>
 
+    {{#each dish}}
+        <h3>Nombre: {{ name }}</h3>
+        <p>Descripción: {{ description }}</p>
+        <img src="{{ img }}" />
+    {{/each}}
+
 {{/with}}

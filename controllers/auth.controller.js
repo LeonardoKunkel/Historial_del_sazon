@@ -90,4 +90,15 @@ exports.postLogin = async (req, res) => {
     return res.redirect('/places');
 }
 
+exports.logout = (req, res) => {
 
+    req.session.destroy((error) => {
+
+        if (error) {
+            console.log(error);
+            return;
+        }
+
+        res.redirect('/');
+    })
+}

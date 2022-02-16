@@ -39,7 +39,15 @@ exports.getPlace = async (req, res) => {
 
     const { id } = req.params;
 
-    const currentPlace = await Place.findById(id).populate('dish');
+    const currentPlace = await Place.findById(id)
+        .populate('dish')
+        .populate({
+            path: 'dish',
+            populate: {
+                path: 'user',
+                model: 'User'
+            }
+        });
     console.log(currentPlace);
 
     res.render('places/place-detail', { place: currentPlace })

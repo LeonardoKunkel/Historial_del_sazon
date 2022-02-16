@@ -25,7 +25,7 @@ exports.createDishForm = async (req, res) => {
             $push: { dish: newDish }
         });
 
-        return res.redirect(`places/${id}`);
+        return res.redirect('/places')
 
     } catch (error) {
         console.log(error);
