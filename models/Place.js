@@ -9,6 +9,10 @@ const placeSchema = Schema({
         type: String,
         required: true,
     },
+    state: {
+        type: String,
+        required: true
+    },
     description: String,
     image: {
         type: String

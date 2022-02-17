@@ -18,6 +18,7 @@ exports.createDishForm = async (req, res) => {
         const newDish = await Dish.create({
             name,
             description,
+            price,
             img
         })
 

@@ -1,6 +1,5 @@
-<h1>Detalles del establecimiento</h1>
-<hr>
 
+<!--
 {{#with place}}
     <h1>{{ name }}</h1>
     <h2>{{ location }}</h2>
@@ -23,6 +22,7 @@
     {{/each}}
 
 {{/with}}
+-->
 
 {{#with place}}
 <div class="bg-white">
@@ -34,10 +34,9 @@
 
           <div class="hidden lg:ml-8 lg:block lg:justify-start">
             <div class="h-full flex space-x-8">
-                    <form action="/places/edit/{{_id}}" method="get">
-                        <button type="button" class="text-lime-500 hover:text-lime-700 text-sm font-medium">Editar Establecimiento</button>
-                    </form>
-
+              <form action="/places/edit/{{_id}}" method="get">
+                  <button class="text-lime-500 hover:text-lime-700 text-sm font-medium">Editar Establecimiento</button>
+              </form>
             </div>
           </div>
 
@@ -79,7 +78,7 @@
                           <h4 class="font-medium text-gray-900">{{ name }}</h4>
                           <p class="hidden mt-2 text-sm text-gray-500 sm:block">{{ description }}</p>
                         </div>
-                        <p class="mt-1 font-medium text-gray-900 sm:mt-0 sm:ml-6">$35.00</p>
+                        <p class="mt-1 font-medium text-gray-900 sm:mt-0 sm:ml-6">${{ price }}</p>
                       </div>
                       <div class="mt-2 flex text-sm font-medium sm:mt-4">
                           

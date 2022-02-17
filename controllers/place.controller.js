@@ -16,13 +16,14 @@ exports.createPlace = (req, res) => {
 
 exports.createPlaceForm = async (req, res) => {
 
-    const { name, location, description, image } = req.body;
+    const { name, location, state, description, image } = req.body;
     console.log(req.body);
 
     try {
         const newPlace = await Place.create({
             name,
             location,
+            state,
             description,
             image
         });
@@ -65,13 +66,14 @@ exports.editPlace = async (req, res) => {
 exports.editPlaceForm = async (req, res) => {
 
     const { id } = req.params;
-    const { name, location, description, image } = req.body;
+    const { name, location, state, description, image } = req.body;
 
     await Place.findByIdAndUpdate(
         id,
         {
             name,
             location,
+            state,
             description,
             image
         }

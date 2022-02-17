@@ -8,6 +8,9 @@ const dishSchema = Schema({
     description: {
         type: String
     },
+    price: {
+        type: Number
+    },
     img: {
         type: String
     },
