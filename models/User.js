@@ -17,7 +17,13 @@ const userSchema = Schema({
     password: {
         type: String,
         required: true,
-    }
+    },
+    places: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Place'
+        }
+    ]
 }, {
     timestamps: true
 });

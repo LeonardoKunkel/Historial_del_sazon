@@ -10,7 +10,7 @@ exports.getDish = (req, res) => {
 
 exports.createDishForm = async (req, res) => {
 
-    const { name, description, img } = req.body;
+    const { name, description, price, img } = req.body;
     console.log(req.body);
     const { id } = req.params;
 
@@ -39,5 +39,21 @@ exports.editDish = async (req, res) => {
 
     const foundDish = await Dish.findById(id);
 
-    return res.render('dishes/edit-dish');
+    return res.render('dishes/edit-dish', { dish: foundDish });
+}
+
+exports.editDishForm = async (req, res) => {
+
+    const { id } = req.params;
+    const { name, description, price, img } = req.body;
+
+    await Dish.findByIdAndUpdate(id, {
+        name,
+        description,
+        price,
+        img
+    });
+
+    return res.redirect('/places')
+
 }

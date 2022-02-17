@@ -28,10 +28,14 @@
 <div class="bg-white">
 
   <header class="relative bg-white">
+    <div class="flex mt-2 ml-2">
+      <a href="/places">
+        <img class="h-8 w-auto sm:h-10" src="https://w7.pngwing.com/pngs/332/713/png-transparent-museum-belvedere-vienna-symbol-font-left-arrow-miscellaneous-angle-photography.png" />
+      </a>
+    </div>
     <nav aria-label="Top" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="border-b border-gray-200">
         <div class="h-16 flex items-center">
-
           <div class="hidden lg:ml-8 lg:block lg:justify-start">
             <div class="h-full flex space-x-8">
               <form action="/places/edit/{{_id}}" method="get">
@@ -82,18 +86,15 @@
                       </div>
                       <div class="mt-2 flex text-sm font-medium sm:mt-4">
                           
-                        <a href="#" class="text-indigo-600 hover:text-indigo-500">View Product</a>
+                        <a href="/dishes/edit/{{_id}}" class="text-lime-600 hover:text-lime-500">Editar platillo</a>
                         <div class="border-l border-gray-200 ml-4 pl-4 sm:ml-6 sm:pl-6">
-                          <a href="#" class="text-indigo-600 hover:text-indigo-500">Buy Again</a>
+                          <a href="#" class="text-red-600 hover:text-red-500">Eliminar platillo</a>
                         </div>
                       </div>
                     </div>
-                    <div class="mt-6 font-medium">
-                      <p>Out for delivery</p>
-                    </div>
                   </div>
                   <div class="ml-4 flex-shrink-0 sm:m-0 sm:mr-6 sm:order-first">
-                    <img src="https://tailwindui.com/img/ecommerce-images/order-history-page-06-product-01.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="col-start-2 col-end-3 sm:col-start-1 sm:row-start-1 sm:row-span-2 w-20 h-20 rounded-lg object-center object-cover sm:w-40 sm:h-40 lg:w-52 lg:h-52">
+                    <img src="{{ img }}" class="col-start-2 col-end-3 sm:col-start-1 sm:row-start-1 sm:row-span-2 w-20 h-20 rounded-lg object-center object-cover sm:w-40 sm:h-40 lg:w-52 lg:h-52">
                   </div>
                 </div>
 

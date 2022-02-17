@@ -8,4 +8,6 @@ router.post('/create', dishCtrl.createDishForm);
 
 router.get('/edit/:id', dishCtrl.editDish);
 
+router.post('/edit/:id', dishCtrl.editDishForm);
+
 module.exports = router;

@@ -8,7 +8,7 @@ exports.register = (req, res) => {
 
 exports.postRegister = async (req, res) => {
 
-    const { email, username, password } = req.body;
+    const { email, username, password, places } = req.body;
 
     if( !email || !username || !password ) {
         return res.render('auth/register', {
@@ -38,7 +38,8 @@ exports.postRegister = async (req, res) => {
         const newUser = await User.create({
             email,
             username,
-            password: hashedPassword
+            password: hashedPassword,
+            places
         });
         console.log(newUser);
         res.redirect('/login');
