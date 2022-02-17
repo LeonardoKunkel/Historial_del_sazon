@@ -23,3 +23,88 @@
     {{/each}}
 
 {{/with}}
+
+{{#with place}}
+<div class="bg-white">
+
+  <header class="relative bg-white">
+    <nav aria-label="Top" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="border-b border-gray-200">
+        <div class="h-16 flex items-center">
+
+          <div class="hidden lg:ml-8 lg:block lg:justify-start">
+            <div class="h-full flex space-x-8">
+                    <form action="/places/edit/{{_id}}" method="get">
+                        <button type="button" class="text-lime-500 hover:text-lime-700 text-sm font-medium">Editar Establecimiento</button>
+                    </form>
+
+            </div>
+          </div>
+
+          <div class="ml-auto flex items-center">
+            <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                <form action="/places/{{_id}}/delete" method="post">
+                    <button class="text-sm font-medium text-red-600 hover:text-red-800">Eliminar Establecimiento</button>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pt-16 pb-14 sm:pt-24 sm:pb-20 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <div class="px-4 sm:px-0">
+        <h1 class="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">{{ name }}</h1>
+        <p class="mt-2 text-sm text-gray-500">{{ description }}</p>
+      </div>
+
+      <section aria-labelledby="recent-heading" class="mt-16">
+
+        <div class="space-y-16 sm:space-y-24">
+            <div class="mt-6 flow-root px-4 sm:mt-10 sm:px-0">
+              <div class="-my-6 divide-y divide-gray-200 sm:-my-10">
+                <a href="/places/dishes/{{_id}}">
+                    <button type="button" class="btn">
+                        Agrega un platillo
+                    </button>
+                </a>
+                {{#each dish}}
+                <div class="flex py-6 sm:py-10">
+                  <div class="min-w-0 flex-1 lg:flex lg:flex-col">
+                    <div class="lg:flex-1">
+                      <div class="sm:flex">
+                        <div>
+                          <h4 class="font-medium text-gray-900">{{ name }}</h4>
+                          <p class="hidden mt-2 text-sm text-gray-500 sm:block">{{ description }}</p>
+                        </div>
+                        <p class="mt-1 font-medium text-gray-900 sm:mt-0 sm:ml-6">$35.00</p>
+                      </div>
+                      <div class="mt-2 flex text-sm font-medium sm:mt-4">
+                          
+                        <a href="#" class="text-indigo-600 hover:text-indigo-500">View Product</a>
+                        <div class="border-l border-gray-200 ml-4 pl-4 sm:ml-6 sm:pl-6">
+                          <a href="#" class="text-indigo-600 hover:text-indigo-500">Buy Again</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-6 font-medium">
+                      <p>Out for delivery</p>
+                    </div>
+                  </div>
+                  <div class="ml-4 flex-shrink-0 sm:m-0 sm:mr-6 sm:order-first">
+                    <img src="https://tailwindui.com/img/ecommerce-images/order-history-page-06-product-01.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="col-start-2 col-end-3 sm:col-start-1 sm:row-start-1 sm:row-span-2 w-20 h-20 rounded-lg object-center object-cover sm:w-40 sm:h-40 lg:w-52 lg:h-52">
+                  </div>
+                </div>
+
+                <!-- More products... -->
+                {{/each}}
+              </div>
+            </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+{{/with}}

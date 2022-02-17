@@ -31,3 +31,12 @@ exports.createDishForm = async (req, res) => {
         console.log(error);
     }
 }
+
+exports.editDish = async (req, res) => {
+
+    const { id } = req.params;
+
+    const foundDish = await Dish.findById(id);
+
+    return res.render('dishes/edit-dish');
+}

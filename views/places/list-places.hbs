@@ -1,6 +1,5 @@
-<h1>Lista de Establecimientos</h1>
-<hr>
 
+<!--
 {{#each places}}
     <h2>{{ name }}</h2>
     <h3>{{ location }}</h3>
@@ -10,10 +9,45 @@
 
     <a href="/places/{{_id}}">Agregar platillos</a>
 {{/each}}
+-->
 
-<br>
 
-<br>
-<a href="/places/create">
-    <button>Agregar Establecimiento</button>
-</a>
+<div class="max-w-5xl mx-auto">
+    <div class="max-w-xl ml-3">
+        <p class="mt-3 text-10xl font-extrabold tracking-tight sm:text-5xl">Lista de tus establecimientos favoritos</p>
+        <p class="mt-2 text-base text-gray-500">Aquí puedes registrar los establecimientos que más te gustan.</p>
+        <br>
+        <a href="/places/create" class="text-lime-500">
+            <button>Agregar Establecimiento</button>
+        </a>
+    </div>
+</div>
+<div class="bg-white">
+  <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+
+    <div class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8">
+      {{#each places}}
+      <div class="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden">
+        <div class="aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:aspect-none sm:h-96">
+          <img src="https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-01.jpg" class="w-full h-full object-center object-cover sm:w-full sm:h-full">
+        </div>
+        <div class="flex-1 p-4 space-y-2 flex flex-col">
+          <h1 class="text-lg font-medium text-gray-900">
+            <a href="/places/{{_id}}">
+              <span aria-hidden="true" class="absolute inset-0"></span>
+              {{ name }}
+            </a>
+          </h1>
+          <p class="text-md text-gray-500">{{ description }}</p>
+          <div class="flex-1 flex flex-col justify-end">
+            <p class="text-md font-medium text-gray-900">Ciudad</p>
+            <p class="text-sm text-gray-500">{{ location }}</p>
+          </div>
+        </div>
+      </div>
+        {{/each}}
+    </div>
+  </div>
+</div>
+
+
