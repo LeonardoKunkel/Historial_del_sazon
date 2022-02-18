@@ -41,8 +41,8 @@ exports.postRegister = async (req, res) => {
             password: hashedPassword,
             places
         });
-        console.log(newUser);
-        res.redirect('/login');
+        // console.log(newUser);
+        res.redirect('/auth/login');
 
     } catch (error) {
 

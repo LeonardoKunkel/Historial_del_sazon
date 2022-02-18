@@ -4,7 +4,7 @@ exports.getHome = (req, res) => {
 }
 
 exports.getProfile = (req, res) => {
-    console.log(req.session);
+    // console.log(req.session);
 
     res.render('profile')
 }

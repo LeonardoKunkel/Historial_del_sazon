@@ -6,7 +6,7 @@ const fileUploader = require('../config/cloudinary');
 exports.getPlaces = async (req, res) => {
 
     const allPlaces = await Place.find({})
-    console.log(allPlaces);
+    // console.log(allPlaces);
     return res.render('places/list-places', { places: allPlaces });
 }
 
@@ -17,7 +17,7 @@ exports.createPlace = (req, res) => {
 exports.createPlaceForm = async (req, res) => {
 
     const { name, location, state, description, image } = req.body;
-    console.log(req.body);
+    // console.log(req.body);
 
     try {
         const newPlace = await Place.create({
@@ -49,7 +49,7 @@ exports.getPlace = async (req, res) => {
                 model: 'User'
             }
         });
-    console.log(currentPlace);
+    // console.log(currentPlace);
 
     res.render('places/place-detail', { place: currentPlace })
 }

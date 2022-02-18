@@ -24,7 +24,7 @@ app.use(morgan('dev'));
 app.use((req, res, next) => {
 
     res.locals.currentUser = req.session.currentUser;
-    console.log();
+    // console.log();
     next()
 })
 

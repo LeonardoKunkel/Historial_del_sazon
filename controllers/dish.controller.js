@@ -4,14 +4,14 @@ const Place = require('../models/Place');
 
 exports.getDish = (req, res) => {
     const { id } = req.params;
-    console.log(id);
+    // console.log(id);
     return res.render(`dishes/new-dish`, { id });
 }
 
 exports.createDishForm = async (req, res) => {
 
     const { name, description, price, img } = req.body;
-    console.log(req.body);
+    // console.log(req.body);
     const { id } = req.params;
 
     try {
@@ -26,7 +26,7 @@ exports.createDishForm = async (req, res) => {
             $push: { dish: newDish }
         });
 
-        return res.redirect('/places')
+        return res.redirect(`/places`)
 
     } catch (error) {
         console.log(error);
@@ -54,7 +54,7 @@ exports.editDishForm = async (req, res) => {
         img
     });
 
-    return res.redirect('/places')
+    return res.redirect(`/places`);
 
 }
 
@@ -64,5 +64,5 @@ exports.deleteDish = async (req, res) => {
 
     await Dish.findByIdAndDelete(id)
 
-    return
+    return res.redirect(`/places`);
 }
