@@ -21,6 +21,13 @@ app.use(express.urlencoded({extended: true}));
 
 app.use(morgan('dev'));
 
+app.use((req, res, next) => {
+
+    res.locals.currentUser = req.session.currentUser;
+    console.log();
+    next()
+})
+
 app.use('/', require('./routes/index.routes'));
 app.use('/auth', require('./routes/auth.routes'));
 app.use('/places', require('./routes/places.routes'));

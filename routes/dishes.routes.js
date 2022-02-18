@@ -10,4 +10,6 @@ router.get('/edit/:id', dishCtrl.editDish);
 
 router.post('/edit/:id', dishCtrl.editDishForm);
 
+router.post('/:id/delete', dishCtrl.deleteDish);
+
 module.exports = router;

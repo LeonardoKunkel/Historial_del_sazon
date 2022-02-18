@@ -1,14 +1,15 @@
 const router = require('express').Router();
 
 const authCtrl = require('../controllers/auth.controller');
+const routeGuard = require('../middlewares/guard');
 
-router.get('/register', authCtrl.register);
+router.get('/register', routeGuard.authAreas, authCtrl.register);
 
-router.post('/register', authCtrl.postRegister);
+router.post('/register', routeGuard.authAreas, authCtrl.postRegister);
 
-router.get('/login', authCtrl.login);
+router.get('/login', routeGuard.authAreas, authCtrl.login);
 
-router.post('/login', authCtrl.postLogin);
+router.post('/login', routeGuard.authAreas, authCtrl.postLogin);
 
 router.get('/logout', authCtrl.logout);
 

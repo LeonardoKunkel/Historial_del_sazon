@@ -2,20 +2,21 @@ const router = require('express').Router();
 
 const placeCtrl = require('../controllers/place.controller');
 const dishCtrl = require('../controllers/dish.controller');
+const routeGuard = require('../middlewares/guard');
 
-router.get('/', placeCtrl.getPlaces);
+router.get('/', routeGuard.privateAreas, placeCtrl.getPlaces);
 
-router.get('/create', placeCtrl.createPlace);
+router.get('/create', routeGuard.privateAreas, placeCtrl.createPlace);
 
-router.post('/create', placeCtrl.createPlaceForm);
+router.post('/create', routeGuard.privateAreas, placeCtrl.createPlaceForm);
 
-router.get('/:id', placeCtrl.getPlace);
+router.get('/:id', routeGuard.privateAreas, placeCtrl.getPlace);
 
-router.get('/edit/:id', placeCtrl.editPlace);
+router.get('/edit/:id', routeGuard.privateAreas, placeCtrl.editPlace);
 
-router.post('/edit/:id', placeCtrl.editPlaceForm);
+router.post('/edit/:id', routeGuard.privateAreas, placeCtrl.editPlaceForm);
 
-router.post('/:id/delete', placeCtrl.deletePlace);
+router.post('/:id/delete', routeGuard.privateAreas, placeCtrl.deletePlace);
 
 
 

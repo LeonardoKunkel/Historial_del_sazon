@@ -57,3 +57,12 @@ exports.editDishForm = async (req, res) => {
     return res.redirect('/places')
 
 }
+
+exports.deleteDish = async (req, res) => {
+
+    const { id } = req.params;
+
+    await Dish.findByIdAndDelete(id)
+
+    return
+}
